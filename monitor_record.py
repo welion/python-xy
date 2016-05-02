@@ -2,6 +2,8 @@
 """
 Created on Thu Apr 28 17:31:54 2016
 
+面向业务导向对告警进行分析的智能统一监控系统
+
 @author: welion
 """
 
@@ -77,7 +79,7 @@ net_rec={"NET_LINK":"True",
 phy_rec={"PHY_FIRE":"True",
          "PHY_WATER":"True",
          "PHY_POW":"True",
-         "PHY_VOL":"",
+         "PHY_VOL":"True",
          "PHY_TEM":"23",
          "PHY_HUM":"45",}
 
