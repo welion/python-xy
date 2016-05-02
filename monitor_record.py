@@ -92,6 +92,51 @@ record.update(phy_rec)
 
 print record
 
+tran_rec1 = {"TRAN_SUC":"40",
+            "TRAN_TPM":"21043",
+            "TRAN_TIME":"1.2",
+            "TRAN_ACC":"32",
+            "TRAN_REV":"56",
+            "TRAN_TYPE":"ISO-8583",}
 
+app_rec1={"APP_CTP":"128",
+         "APP_NOF":"16",
+         "APP_MQN":"24",
+         "APP_MQS":"12",
+         "APP_LOG":"16",
+         "APP_HAND":"3792",}
 
+db_rec1={"DB_CPU":"63",
+        "DB_HIR":"95",
+        "DB_IDXCON":"False",
+        "DB_LOCK":"5",
+        "DB_TAB":"75",
+        "DB_WAIT":"10",}
 
+os_rec1={"OS_PING":"True",
+        "OS_CPU":"67",
+        "OS_MEM":"64",
+        "OS_SWAP":"0",
+        "OS_STOR":"63",
+        "OS_IO":"0.0010",}
+
+net_rec1={"NET_LINK":"True",
+         "NET_LOSS":"0",
+         "NET_LINKNUM":"3420",
+         "NET_BW":"14",}
+
+phy_rec1={"PHY_FIRE":"True",
+         "PHY_WATER":"True",
+         "PHY_POW":"True",
+         "PHY_VOL":"True",
+         "PHY_TEM":"23",
+         "PHY_HUM":"45",}
+
+record.update(tran_rec1)
+record.update(app_rec1)
+record.update(db_rec1)
+record.update(os_rec1)
+record.update(net_rec1)
+record.update(phy_rec1)
+
+print record
