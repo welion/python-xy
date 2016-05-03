@@ -92,11 +92,11 @@ record.update(phy_rec)
 
 print record
 
-tran_rec1 = {"TRAN_SUC":"40",
-            "TRAN_TPM":"21043",
-            "TRAN_TIME":"1.2",
-            "TRAN_ACC":"32",
-            "TRAN_REV":"56",
+tran_rec1 = {"TRAN_SUC":"60",
+            "TRAN_TPM":"21243",
+            "TRAN_TIME":"0.8",
+            "TRAN_ACC":"54",
+            "TRAN_REV":"42",
             "TRAN_TYPE":"ISO-8583",}
 
 app_rec1={"APP_CTP":"128",
