@@ -6,6 +6,7 @@ Created on Thu Apr 28 17:31:54 2016
 
 @author: welion
 """
+import pymongo
 
 record = {}
 #业务层：
@@ -91,7 +92,7 @@ record.update(net_rec)
 record.update(phy_rec)
 
 print record
-
+record1={}
 tran_rec1 = {"TRAN_SUC":"60",
             "TRAN_TPM":"21243",
             "TRAN_TIME":"0.8",
@@ -114,29 +115,37 @@ db_rec1={"DB_CPU":"63",
         "DB_WAIT":"10",}
 
 os_rec1={"OS_PING":"True",
-        "OS_CPU":"67",
-        "OS_MEM":"64",
+        "OS_CPU":"45",
+        "OS_MEM":"65",
         "OS_SWAP":"0",
-        "OS_STOR":"63",
-        "OS_IO":"0.0010",}
+        "OS_STOR":"54",
+        "OS_IO":"0.0011",}
 
 net_rec1={"NET_LINK":"True",
          "NET_LOSS":"0",
-         "NET_LINKNUM":"3420",
-         "NET_BW":"14",}
+         "NET_LINKNUM":"3820",
+         "NET_BW":"10",}
 
 phy_rec1={"PHY_FIRE":"True",
          "PHY_WATER":"True",
          "PHY_POW":"True",
          "PHY_VOL":"True",
-         "PHY_TEM":"23",
-         "PHY_HUM":"45",}
+         "PHY_TEM":"22",
+         "PHY_HUM":"43",}
 
-record.update(tran_rec1)
-record.update(app_rec1)
-record.update(db_rec1)
-record.update(os_rec1)
-record.update(net_rec1)
-record.update(phy_rec1)
+record1.update(tran_rec1)
+record1.update(app_rec1)
+record1.update(db_rec1)
+record1.update(os_rec1)
+record1.update(net_rec1)
+record1.update(phy_rec1)
 
-print record
+DB_HOST = "127.0.0.1"
+PORT = 27018
+DB_NAME = "monitor_record"
+
+client = pymongo.MongoClient(host=DB_HOST,port=DB_PORT)
+db = client[DB_NAME]
+post = db[DB_NAME]
+post.inert(record)
+post.insert(record1)
