@@ -140,13 +140,13 @@ record1.update(os_rec1)
 record1.update(net_rec1)
 record1.update(phy_rec1)
 
-DB_HOST = "192.168.200.9"
+DB_HOST = "192.168.10.7"
 DB_PORT = 27017
 DB_NAME = "monitor_record"
 
 client = pymongo.MongoClient(host=DB_HOST,port=DB_PORT)
 db = client[DB_NAME]
-#post = db[DB_NAME]
+post = db[DB_NAME]
 #post.insert(record)
 #post.insert(record1)
 
