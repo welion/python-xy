@@ -153,3 +153,7 @@ post = db[DB_NAME]
 info = db[DB_NAME]
 for i in info.find():
     print i 
+
+
+
+
