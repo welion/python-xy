@@ -5,8 +5,8 @@ Created on Wed May 11 21:55:54 2016
 @author: welion
 """
 
-from urllib.request import urlopen
-from urllib.error import HTTPError
+from urllib import urlopen
+from urllib2 import HTTPError
 from bs4 import BeautifulSoup
 
 def getTitle(url):
@@ -23,4 +23,6 @@ def getTitle(url):
     
 title = getTitle("http://www.pythonscraping.com/pages/page1.html")
 if title == None:
-    print "Title 
+    print "Title could not be found"
+else: 
+    print title
