@@ -6,4 +6,4 @@ Created on Wed May 11 21:55:54 2016
 """
 
 from urllib.request import urlopen
-from 
+from bs4.BeautifulSoup import 
