@@ -65,6 +65,7 @@ os_rec={"OS_PING":"True",
 ##通断性(NET_LINK)
 ##丢包率(NET_LOSS)
 ##连接数(NET_LINKNUM)
+##网络流量(NET_)
 ##带宽使用率(NET_BW)
 net_rec={"NET_LINK":"True",
          "NET_LOSS":"0",
