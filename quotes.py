@@ -15,7 +15,7 @@ from datetime import date
 import pandas as pd
 
 today = date.today()
-start = (today.year-1,today.month,today.day)
+start = (today.year,today.month-3,today.day)
 quotes = quotes_historical_yahoo('AXP',start,today,asobject=False)
 quotesdf = pd.DataFrame(data=quotes,columns=(u'time',u'open',u'close',u'high',u'low',u'volume'))
 print quotesdf
