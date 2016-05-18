@@ -20,6 +20,6 @@ list6 = [100,98,100,92]
 data = vstack((list1,list2,list3,list4,list5,list6))
 centroids,_=kmeans(data,2) #n=2 分成2类
 #print "centroids is :  %s" %centroids #聚类中心
-result,_=vq(data,centroids) 
+result,_=vq(data,centroids) #按照聚类中心分类
 print result
 
