@@ -34,7 +34,6 @@ for i in range(30):
         else:
             listTemp[i][j] = 1
 
-print listTemp
             
 data = vstack(listTemp)
 centroids,_=kmeans(data,4)
