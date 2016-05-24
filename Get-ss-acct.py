@@ -28,14 +28,19 @@ def Sort_Page(html_page):
     Server_text = bsObj.findAll("div",{"class":"col-lg-4 text-center"})
     for i in Server_text[0:3]:
         for j in i.findAll({"h4"}):
-            Server_list.append(str(j.get_text()).split(u':'))
+            lines = str(j.get_text()).split(':')
+            if len(lines) > 1:
+                Server_list.append(lines)            
     return Server_list
             
             
 html_page = Get_Page(URL)
 list1 = Sort_Page(html_page)
+
 for i in list1:
     print i
+dict1 = dict(list1)
+print dict1
 #    name,element = str(i).split(u':')
 #    print name + "=======" + element
     
