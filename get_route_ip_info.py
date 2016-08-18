@@ -12,15 +12,15 @@ import smtplib
 from email.mime.text import MIMEText
 
 
-MAIL_HOST = "smtp.163.com"
-SUBJECT = "Route_infomation"
-MAIL_FROM = "welion_zhong@163.com"
+MAIL_HOST = "smtp.sina.com"
+SUBJECT = "Route_infomation_new"
+MAIL_FROM = "auto_pop_mail@sina.com"
 MAIL_TO = "zhongwanhua001@qq.com"
 
 ROUTE_HOST = "192.168.1.1"
 ROUTE_SSH_PORT = 22222
 ROUTE_USER_NAME = "admin"
-ROUTE_USER_PASS = ""
+ROUTE_USER_PASS = "!QAZ2wsx"
 ROUTE_COMMAND = "ifconfig ppp0"
 
 def Exec_command():
@@ -44,7 +44,7 @@ def Send_Mail(ip_info):
         server = smtplib.SMTP()
         server.connect(MAIL_HOST,"25")
         server.starttls()
-        server.login("welion_zhong@163.com","zwh123@163")
+        server.login("auto_pop_mail@sina.com","zwh123")
         server.sendmail(MAIL_FROM,[MAIL_TO],msg.as_string())
         server.quit()
         print "Send mail successfully!"

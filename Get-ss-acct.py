@@ -38,9 +38,9 @@ html_page = Get_Page(URL)
 list1 = Sort_Page(html_page)
 
 for i in list1:
-    print i
+    print "%s " %i
 dict1 = dict(list1)
-print dict1
+
 #    name,element = str(i).split(u':')
 #    print name + "=======" + element
     
