@@ -24,11 +24,11 @@ def Get_Page(URL):
 
 def Sort_Page(html_page):
     Server_list=[]
-    bsObj = BeautifulSoup(html_page)
+    bsObj = BeautifulSoup(html_page,"lxml")
     Server_text = bsObj.findAll("div",{"class":"col-lg-4 text-center"})
     for i in Server_text[0:3]:
         for j in i.findAll({"h4"}):
-            lines = str(j.get_text()).split(':')
+            lines = str(j.get_text()).split(":")
             if len(lines) > 1:
                 Server_list.append(lines)            
     return Server_list

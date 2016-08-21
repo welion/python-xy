@@ -9,6 +9,7 @@ from datetime import date
 from datetime import datetime
 import pandas as pd
 
+
 today = date.today()
 start = (today.year, today.month, today.day-13)
 quotes = quotes_historical_yahoo_ohlc('KO',start,today)
@@ -24,6 +25,8 @@ quotesdf = pd.DataFrame(quotes,index=timelist,columns=fields)
 quotesdf = quotesdf.drop(['date'],axis=1)
 print quotesdf
 
+closeKO = quotesdf['high']
+print closeKO
 
 
 

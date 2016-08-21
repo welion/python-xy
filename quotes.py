@@ -12,6 +12,7 @@ Created on Wed Dec 02 11:25:23 2015
 
 from matplotlib.finance import quotes_historical_yahoo_ochl
 from datetime import date
+from datetime import datetime
 import pandas as pd
 
 today = date.today()
@@ -26,6 +27,6 @@ for i in range(0,len(quotes)):
 quotesdf = pd.DataFrame(quotes,index=timelist,columns=fields)
 quotesdf = quotesdf.drop(['date'],axis=1)
 
+print quotesdf
 
-quotesdf.index.name='No.'
 

@@ -4,7 +4,8 @@ import urllib
 import urllib2
 from bs4 import BeautifulSoup
 
-html = urllib.urlopen("http://www.pythonscraping.com/pages/warandpeace.html")
-bsObj = BeautifulSoup(html)
+html = urllib.urlopen("http://www.pythonscraping.com/")
+bsObj = BeautifulSoup(html.read(),"html5lib")
 
-print html
+
+
