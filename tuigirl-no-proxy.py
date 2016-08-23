@@ -138,9 +138,6 @@ if __name__=='__main__':
 
     for i in range(page_num):
         img_list = Tui_Girl().get_img_list(link_list[i])
-
-        print img_list
-
         t = threading.Thread(target=Tui_Girl().download_pic,args=(img_list,PATH))
         threads.append(t)
 
