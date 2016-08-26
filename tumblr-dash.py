@@ -29,7 +29,7 @@ class Welion_Tumblr():
         cli = pytumblr.TumblrRestClient('2JK7GvJw1PnwHnDJPJKUyqsK37UlFvrzdVzsHMku8hUvRgEu4N')
         
         url_list = []
-        resp = cli.posts(name+'.tumblr.com')
+        resp = cli.posts(name+'.tumblr.com',type='photo')
 
         posts_num = len(resp['posts'])
         for i in range(posts_num):
@@ -56,8 +56,17 @@ class Welion_Tumblr():
             print name + " Already Download -.-"
 
 
-
-
+    def multiple_download(self,URL_LIST,PATH):
+        threads = []
+        for i in range(len(URL_LIST)):
+            t = threading.Thread(target=self.download_photo,args=(URL_LIST[i],PATH))
+            threads.append(t)
+        for t in threads:
+            t.setDaemon(True)
+            t.start()
+            print "Threading ON!"
+        t.join()
+        
 
 
 
@@ -67,19 +76,15 @@ if __name__ == '__main__':
     #nvxing = client.posts('nvxing.tumblr.com')
     #print nvxing
     #print nvxing['response']['posts']['posts']
-    url_list = Welion_Tumblr().get_photo_url('zekocolor')
+    blog = ''
+    url_list = Welion_Tumblr().get_photo_url(blog)
     print len(url_list)
+    path = PATH + blog + '\\'
+    if os.path.exists(path) == False:
+        os.mkdir(path)
+    os.chdir(path)
+    print os.getcwd()
     
-    threads = []
-    
-    for i in range(len(url_list)):
-
-        t = threading.Thread(target=Welion_Tumblr().download_photo,args=(url_list[i],PATH))
-        threads.append(t)
-    for t in threads:
-        t.setDaemon(True)
-        t.start()
-        print "Thread ON! \t"
-    t.join()
+    Welion_Tumblr().multiple_download(url_list,path)
     print "All Done"
         
