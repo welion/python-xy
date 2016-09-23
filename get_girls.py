@@ -8,7 +8,6 @@ Created on Mon Aug 15 16:05:33 2016
 import os
 
 
-
 from bs4 import BeautifulSoup
 import requests
 
