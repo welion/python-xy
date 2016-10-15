@@ -37,7 +37,7 @@ def Get_VPN1():
     passwd = ss[0]['pw']
     port = ss[0]['p']
 
-    ss_info = "{ \"server\":\"" + ip + "\", " + "\"server_port\": " + port + ", \"lcaol_port\":1080, " + "\"password\": " + "\"" + passwd + "\", " + "\"method\": " + "\"" + method + "\" }"
+    ss_info = "{ \"server\":\"" + ip + "\", " + "\"server_port\": " + port + ", \"local_port\":1080, " + "\"password\": " + "\"" + passwd + "\", " + "\"method\": " + "\"" + method + "\" }"
     return ss_info
 
 
