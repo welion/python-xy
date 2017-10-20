@@ -13,9 +13,9 @@ import requests
 
 
 
-URL_BASE='http://c2.1024mx.info/pw/'
+URL_BASE='http://s2.lulujjs.info/pw/'
 PATH = 'C:\Users\welion\Downloads\pic-get\'
-URL_SITE='http://c2.1024mx.info/pw/thread.php?fid=14&page=2'
+URL_SITE='http://s2.lulujjs.info/pw/thread.php?fid=14&page=2'
 
 class Take_Girls():
     def Get_link(self,URL):
@@ -29,7 +29,7 @@ class Take_Girls():
         return pics
 
     def Get_page_link(self,URL):
-        URL_BASE = 'http://c2.1024mx.info/pw/'
+        URL_BASE = 'http://s2.lulujjs.info/pw/'
         page_list=[]
         page=requests.get(URL).content
         bs2=BeautifulSoup(page)
@@ -55,7 +55,7 @@ class Take_Girls():
 
 if __name__=='__main__':
 
-    URL1='http://c2.1024mx.info/pw/htm_data/14/1608/410949.html'
+    URL1='http://s2.lulujjs.info/pw/htm_data/14/1608/410949.html'
     link_list = Take_Girls().Get_page_link(URL_SITE)
 
     #pics_list=Take_Girls().Get_link(URL1)
